@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <link id = "theme" rel="stylesheet" href="/css/style.css">
+<head>
+    <title>Ejemplo de HTML y JavaScript</title>
+</head>
+<body>
+    <h1 id="textoCambiante">presiona un boton para cambiar el color</h1>
+    
+    <button id="cambiarColorButton">Cambiar Color</button>
+    
+    <input type="text" id="cuadroTexto" style="background-color: white;">
+    
+    <script>
+        // Función JavaScript que se ejecutará cuando se haga clic en el botón
+        document.getElementById("cambiarColorButton").addEventListener("click", function() {
+            var cuadroTexto = document.getElementById("cuadroTexto");
+            cuadroTexto.style.backgroundColor = "red";
+        });
+    </script>
+    <button id="cambiarColorfondo">Cambiar Color</button>
+
+     <script>
+        // Función JavaScript que se ejecutará cuando se haga clic en el botón
+        document.getElementById("cambiarColorfondo").addEventListener("click", function() {
+            // Cambiar el color de fondo de la página
+            document.body.style.backgroundColor = getRandomColor();
+        });
+
+        // Función para generar un color aleatorio
+        function getRandomColor() {
+            var letters = "0123456789ABCDEF";
+            var color = "#";
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+    </script>
+    <button id="cambiarColortexto">Cambiar Color de Texto</button>
+    <script>
+        // Función JavaScript que se ejecutará cuando se haga clic en el botón
+        document.getElementById("cambiarColortexto").addEventListener("click", function() {
+            // Cambiar el color del texto
+            var textoCambiante = document.getElementById("textoCambiante");
+            textoCambiante.style.color = getRandomColor();
+        });
+
+        // Función para generar un color aleatorio
+        function getRandomColor() {
+            var letters = "0123456789ABCDEF";
+            var color = "#";
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+    </script>
+
+<h2>Delegación de Eventos</h2>
+
+    
+<label for="radio-light">Tema claro</label>
+<br />
+<input
+  name="theme"
+  id="radio-dark"
+  type="radio"
+  data-theme="css/style.css"
+  data-name="Obscuro"
+/>
+</body>
+</html>
